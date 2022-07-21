@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './styles.css'
 
+import { Card } from '../../components/Card'
+
 export function Home() {
 
     const [profile, setProfile] = useState()
@@ -19,6 +21,7 @@ export function Home() {
 
     return (
         <>
+            <Card />
         </>
     )
 }
