@@ -21,7 +21,7 @@ export function Home() {
 
     return (
         <>
-            <Card />
+            {profile ? <Card profile={profile}/> : <></>}
         </>
     )
 }

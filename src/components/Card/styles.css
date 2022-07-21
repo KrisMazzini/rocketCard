@@ -12,7 +12,29 @@
     width: 407px;
     height: 644px;
 
+    padding: 37.78px 0 0 33.58px;
     border-radius: 50px;
 
     background-color: var(--bg-card);
+}
+
+.card header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 19.44px;
+}
+
+.card header .logo-container {
+    width: 55.42px;
+    height: 54.44px;
+    
+    border: 1px solid var(--text);
+    border-radius: 50%;
+}
+
+.card header .logo {
+    width: 30.14px;
+    height: 36.94px;
+    margin: 9.72px 12.64px 7.78px 12.64px;
 }
