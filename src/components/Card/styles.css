@@ -12,7 +12,10 @@
     width: 407px;
     height: 644px;
 
-    padding: 37.78px 0 0 33.58px;
+    display: flex;
+    flex-direction: column;
+
+    padding: 37.78px 6.59px 27.42px 33.58px;
     border-radius: 50px;
 
     background-color: var(--bg-card);
@@ -37,4 +40,18 @@
     width: 30.14px;
     height: 36.94px;
     margin: 9.72px 12.64px 7.78px 12.64px;
+}
+
+.card footer {
+    margin-top: auto;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10.89px;
+}
+
+.card footer .logo {
+    width: 28px;
+    height: 34.32px;
 }
