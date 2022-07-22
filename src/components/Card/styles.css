@@ -1,22 +1,26 @@
 .card-container {
     width: 438px;
     height: 693px;
-
+    
     padding: 24px 15px 25px 16px;
     border-radius: 50px;
-
-    background-color: var(--bg);
+    
+    background-color: #42bffe;
 }
 
 .card {
     width: 407px;
     height: 644px;
+    
+    position: relative;
 
     display: flex;
     flex-direction: column;
 
     padding: 37.78px 6.59px 27.42px 33.58px;
     border-radius: 50px;
+
+    overflow: hidden;
 
     background-color: var(--bg-card);
 }
@@ -42,9 +46,21 @@
     margin: 9.72px 12.64px 7.78px 12.64px;
 }
 
+.card .avatar {
+    width: 372px;
+    height: 370.23px;
+
+    position: absolute;
+    top: 134px;
+    left: 89px;
+
+    border: 10px solid var(--img-profile);
+    border-radius: 50%;
+}
+
 .card footer {
     margin-top: auto;
-    
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
