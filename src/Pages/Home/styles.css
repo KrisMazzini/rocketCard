@@ -1,9 +1,49 @@
-main {
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 22px;
+    
+    background-color: var(--bg-card);
+}
+
+.container main {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container main p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #ffffff;
+}
+
+.container .card-container {
     width: 438px;
     height: 693px;
     
     padding: 24px 15px 25px 16px;
     border-radius: 50px;
-    
-    background-color: #42bffe;
+
+    background-color: #000000;
+}
+
+.container aside {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+}
+
+.container aside p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #FFFFFF;
 }
