@@ -1,0 +1,24 @@
+.profile-data {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 9px;
+}
+
+.profile-data img {
+    width: 20.79px;
+    height: 20.79px;
+}
+
+.profile-data p {
+    max-width: 130px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    
+    color: #ffffff;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
