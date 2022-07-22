@@ -20,8 +20,8 @@ export function Home() {
     }, [])
 
     return (
-        <>
+        <main>
             {profile ? <Card profile={profile}/> : <></>}
-        </>
+        </main>
     )
 }
