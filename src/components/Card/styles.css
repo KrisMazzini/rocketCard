@@ -49,7 +49,7 @@
     border-radius: 50%;
 }
 
-.card .profile-data {
+.card .profile-data-container {
     width: 195.5px;
     height: 194.7px;
 
@@ -58,6 +58,13 @@
     left: 21.13px;
     z-index: 2;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8.13px;
+
+    padding-left: 20.45px;
     border-radius: 50px;
 
     background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
