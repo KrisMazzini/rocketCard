@@ -43,9 +43,24 @@
     position: absolute;
     top: 134px;
     left: 89px;
+    z-index: 1;
 
     border: 10px solid var(--img-profile);
     border-radius: 50%;
+}
+
+.card .profile-data {
+    width: 195.5px;
+    height: 194.7px;
+
+    position: absolute;
+    top: 352.82px;
+    left: 21.13px;
+    z-index: 2;
+
+    border-radius: 50px;
+
+    background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
 }
 
 .card footer {
