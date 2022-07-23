@@ -20,7 +20,7 @@ export const Card = React.forwardRef((props, ref) => {
                 <ProfileData key="followers" icon="/followers.svg" text={`${profile.followers} followers`} />
                 <ProfileData key="following" icon="/following.svg" text={`${profile.following} following`} />
                 <ProfileData key="repos" icon="/repository.svg" text={`${profile.public_repos} repos`} />
-                <ProfileData key="company" icon="/company.svg" text={profile.company} />
+                <ProfileData key="company" icon="/company.svg" text={`@${profile.company}`} />
                 <ProfileData key="location" icon="location.svg" text={profile.location} />
             </div>
             <footer>
