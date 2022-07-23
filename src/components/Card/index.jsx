@@ -1,7 +1,7 @@
 import './styles.css'
 import { ProfileData } from '../ProfileData'
 
-import React, { forwardRef } from 'react'
+import React from 'react'
 
 export const Card = React.forwardRef((props, ref) => {
 
