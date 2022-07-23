@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
+import { exportComponentAsPNG } from 'react-component-export-image'
+
 import './styles.css'
 
-import { Card } from '../../components/Card'
+import {Card }from '../../components/Card'
 import { Button } from '../../components/Button'
 
 export function Home() {
 
     const [profile, setProfile] = useState()
+
+    const cardRef = useRef()
 
     function generateBackgroundColor() {
         const elements = document.querySelectorAll(".card-container, .button")
@@ -46,12 +50,13 @@ export function Home() {
             <main>
                 <p>Share your #rocketcard</p>
                 <div className="card-container">
-                    {profile ? <Card profile={profile}/> : <></>}
+                    {profile ? <Card profile={profile} ref={cardRef} /> : <></>}
                 </div>
             </main>
             <aside>
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
+                <Button key="saveAsPNG" text="Save as PNG" onclick={() => exportComponentAsPNG(cardRef)}/>
             </aside>
         </div>
     )

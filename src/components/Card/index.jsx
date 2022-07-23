@@ -1,9 +1,14 @@
 import './styles.css'
 import { ProfileData } from '../ProfileData'
 
-export function Card({profile}) {
+import React, { forwardRef } from 'react'
+
+export const Card = React.forwardRef((props, ref) => {
+
+    const {profile} = props
+
     return (
-        <div className="card">
+        <div className="card" ref={ref}>
             <header>
                 <div className="logo-container">
                     <img src="/logo.svg" alt="logo" className='logo'/>
@@ -24,4 +29,6 @@ export function Card({profile}) {
             </footer>
         </div>
     )
-}
+})
+
+// export default forwardRef(Card)
