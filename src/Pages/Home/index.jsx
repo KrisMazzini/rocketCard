@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import { exportComponentAsPNG } from 'react-component-export-image'
+import { exportComponentAsPNG, exportComponentAsJPEG } from 'react-component-export-image'
 
 import './styles.css'
 
@@ -55,7 +55,8 @@ export function Home() {
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
                 <p>Export Rocketcard</p>
-                <Button key="saveAsPNG" text="Save as PNG" onclick={() => exportComponentAsPNG(cardRef)}/>
+                <Button key="saveAsPNG" text="Save as PNG" onclick={() => exportComponentAsPNG(cardRef, "rocketcard.png")}/>
+                <Button key="saveAsJPEG" text="Save as JPEG" onclick={() => exportComponentAsJPEG(cardRef, "rocketcard.jpg")}/>
             </aside>
         </div>
     )
