@@ -49,9 +49,7 @@ export function Home() {
         <div className="container">
             <main>
                 <p>Share your #rocketcard</p>
-                <div className="card-container">
-                    {profile ? <Card profile={profile} ref={cardRef} /> : <></>}
-                </div>
+                {profile ? <Card profile={profile} ref={cardRef} /> : <></>}
             </main>
             <aside>
                 <p>Customize Rocketcard</p>
