@@ -56,6 +56,7 @@ export function Home() {
             <aside>
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
+                <p>Export Rocketcard</p>
                 <Button key="saveAsPNG" text="Save as PNG" onclick={() => exportComponentAsPNG(cardRef)}/>
             </aside>
         </div>
