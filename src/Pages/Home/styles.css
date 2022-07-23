@@ -23,16 +23,6 @@
     color: #ffffff;
 }
 
-.container .card-container {
-    width: 438px;
-    height: 693px;
-    
-    padding: 24px 15px 25px 16px;
-    border-radius: 50px;
-
-    background-color: #000000;
-}
-
 .container aside {
     display: inline-flex;
     flex-direction: column;

@@ -10,8 +10,15 @@ import { Button } from '../../components/Button'
 export function Home() {
 
     const [profile, setProfile] = useState()
-
+    
     const cardRef = useRef()
+
+    const exportOptions = {
+        fileName: "rocketcard",
+        html2CanvasOptions: {
+            backgroundColor: "none"
+        }
+    }
 
     function generateBackgroundColor() {
         const elements = document.querySelectorAll(".card-container, .button")
@@ -55,8 +62,8 @@ export function Home() {
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
                 <p>Export Rocketcard</p>
-                <Button key="saveAsPNG" text="Save as PNG" onclick={() => exportComponentAsPNG(cardRef, "rocketcard.png")}/>
-                <Button key="saveAsJPEG" text="Save as JPEG" onclick={() => exportComponentAsJPEG(cardRef, "rocketcard.jpg")}/>
+                <Button key="saveAsPNG" text="Save as PNG" onclick={() => exportComponentAsPNG(cardRef, exportOptions)}/>
+                <Button key="saveAsJPEG" text="Save as JPEG" onclick={() => exportComponentAsJPEG(cardRef, exportOptions)}/>
             </aside>
         </div>
     )
