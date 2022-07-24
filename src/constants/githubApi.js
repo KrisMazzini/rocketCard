@@ -1,1 +1,1 @@
-export const users = "https://pi.github.com/users/"
+export const users = "https://api.github.com/users/"
