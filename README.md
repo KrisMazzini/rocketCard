@@ -18,7 +18,7 @@ Once the card is succesfully generated, the user can export it by saving it as P
 
 ## How to run
 
-In order to run this application: 
+Visit https://rocketcard-beta.vercel.app, or...
 
 1. clone this repository using ```git clone git@github.com:KrisMazzini/rocketCard.git``` ... or simply download the project zip;
 2. open the console at the project directory;
