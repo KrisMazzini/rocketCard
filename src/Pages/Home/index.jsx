@@ -65,6 +65,9 @@ export function Home() {
     }
 
     function handleFetchGithubData() {
+
+        if (!!errorMessage) return
+
         if (!username) {
             addError("Insert an username!")
             return
@@ -95,7 +98,7 @@ export function Home() {
     return (
         <div className="container">
             {
-                errorMessage ? <Alert errorMessage={errorMessage} onclick={() => setErrorMessage(null)} /> : <></>
+                errorMessage ? <Alert errorMessage={errorMessage} /> : <></>
             }
             <main>
                 <p>Share your #rocketcard</p>

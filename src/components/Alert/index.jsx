@@ -1,8 +1,14 @@
 import './styles.css'
 
-export function Alert({errorMessage, onclick}) {
+export function Alert({errorMessage}) {
+
+    function closeAlert() {
+        const alert = document.querySelector(".alert")
+        alert.style.display = "none"
+    }
+
     return (
-        <div className="alert" onClick={onclick}>
+        <div className="alert" onClick={closeAlert}>
             <img src="/error.svg" alt="error" />
             <div className="message-container">
                 <p className="error">{errorMessage || "Error"}</p>
