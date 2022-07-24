@@ -9,7 +9,7 @@ import { Button } from '../../components/Button'
 import { SearchProfile } from '../../components/SearchProfile'
 import { Alert } from '../../components/Alert'
 
-import { users } from '../../constants/githubApi'
+import { users } from '../../services/githubApi'
 
 export function Home() {
 
