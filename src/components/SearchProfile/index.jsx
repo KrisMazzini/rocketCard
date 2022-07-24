@@ -4,7 +4,7 @@ export function SearchProfile({onchange, onclick}) {
     return (
         <div className="search-profile">
             <input type="text" placeholder='Username' onChange={onchange}/>
-            <button><img src="/search.svg" alt="search" onClick={onclick} /></button>
+            <button onClick={onclick}><img src="/search.svg" alt="search" /></button>
         </div>
     )
 }
