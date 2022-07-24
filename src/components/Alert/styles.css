@@ -1,6 +1,5 @@
 .alert {
     min-width: 150px;
-    /* max-width: 450px; */
     height: 70px;
 
     position: fixed;
@@ -16,9 +15,10 @@
 
     cursor: pointer;
 
-    background-color: #ffffff;
+    background: linear-gradient(90deg, #d9d9d9 0 50%, #ffffff 50% 100%);
+    background-size: 200% 100%;
 
-    animation: slidein 500ms forwards;
+    animation: slidein 500ms forwards, setbackground 5s linear;
 }
 
 @keyframes slidein {
@@ -28,6 +28,16 @@
 
     to {
         right: 30px;
+    }
+}
+
+@keyframes setbackground {
+    from {
+        background-position: 0% 100%;
+    }
+
+    to {
+        background-position: 100% 100%;
     }
 }
 
