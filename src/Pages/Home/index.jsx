@@ -59,9 +59,18 @@ export function Home() {
         return textColor
     }
 
-    function addError(message) {
-        setErrorMessage(message)
-        setTimeout(setErrorMessage, 5000, null)
+    function addAlert(message) {
+        const timeout = setTimeout(setErrorMessage, 5000, null)
+        const newErrorMessage = {
+            message,
+            timeout
+        }
+        setErrorMessage(newErrorMessage)
+    }
+
+    function clearAlert() {
+        clearTimeout(errorMessage.timeout)
+        setErrorMessage(null)
     }
 
     function handleFetchGithubData() {
@@ -69,7 +78,7 @@ export function Home() {
         if (!!errorMessage) return
 
         if (!username) {
-            addError("Insert an username!")
+            addAlert("Insert an username!")
             return
         }
 
@@ -87,18 +96,18 @@ export function Home() {
             console.error(err)
 
             if (err.response.status === 404) {
-                addError("User not found!")
+                addAlert("User not found!")
                 return
             }
 
-            addError("It was not possible to process this request. Try again later.")
+            addAlert("It was not possible to process this request. Try again later.")
         }
     }
 
     return (
         <div className="container">
             {
-                errorMessage ? <Alert errorMessage={errorMessage} /> : <></>
+                errorMessage ? <Alert errorMessage={errorMessage.message} onclick={clearAlert} /> : <></>
             }
             <main>
                 <p>Share your #rocketcard</p>
