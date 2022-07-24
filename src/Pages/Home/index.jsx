@@ -6,10 +6,13 @@ import './styles.css'
 
 import {Card }from '../../components/Card'
 import { Button } from '../../components/Button'
+import { SearchProfile } from '../../components/SearchProflie'
+import { users } from '../../constants/githubApi'
 
 export function Home() {
 
-    const [profile, setProfile] = useState()
+    const [username, setUsername] = useState(null)
+    const [profile, setProfile] = useState({})
     
     const cardRef = useRef()
 
@@ -21,7 +24,7 @@ export function Home() {
     }
 
     function generateBackgroundColor() {
-        const elements = document.querySelectorAll(".card-container, .button")
+        const elements = document.querySelectorAll(".card-container, .button, .search-profile")
         
         const rbgIndexes = [0,0,0].map(getRandomNumber)
         const backgroundColor = getRBGColor(...rbgIndexes)
@@ -41,24 +44,27 @@ export function Home() {
         return randomNumber
     }
 
-    useEffect(() => {
-        async function fetchGithubData() {
-            const githubAPI = "https://api.github.com/users/KrisMazzini"
+    async function fetchData() {
+        try {
+            const githubAPI = `${users}${username}`
             const response = await axios.get(githubAPI)
-
+            
             setProfile(response.data)
+        } catch (err) {
+            setProfile({})
+            console.err(err)
         }
-
-        fetchGithubData().catch(err => console.error("API not found"))
-    }, [])
+    }
 
     return (
         <div className="container">
             <main>
                 <p>Share your #rocketcard</p>
-                {profile ? <Card profile={profile} ref={cardRef} /> : <></>}
+                <Card profile={profile} ref={cardRef} />
             </main>
             <aside>
+                <p>Search GitHub profile</p>
+                <SearchProfile onchange={e => setUsername(e.target.value)} onclick={fetchData}/>
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
                 <p>Export Rocketcard</p>

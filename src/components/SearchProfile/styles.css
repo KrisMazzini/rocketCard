@@ -1,0 +1,52 @@
+.search-profile {
+    width: 229px;
+    height: 59.47px;
+
+    display: flex;
+    align-items: center;
+
+    border: 2px solid var(--border-button);
+    border-radius: 15px;
+    
+    background-color: #000000;
+}
+
+.search-profile input {
+    width: calc(100% - 59.47px);
+    height: 100%;
+
+    padding: 20px;
+
+    outline: none;
+    border: none;
+    border-radius: 15px;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 23px;
+        
+    background-color: inherit;
+    color: #FFFFFF;
+}
+
+.search-profile button {
+    width: 59.47px;
+    height: 100%;
+
+    outline: none;
+    border: none;
+    border-radius: 15px;
+
+    cursor: pointer;
+    
+    background-color: inherit;
+}
+
+.search-profile button:hover {
+    filter: opacity(0.8);
+}
+
+.search-profile button:active {
+    filter: brightness(1.2);
+    transition: none;
+}
