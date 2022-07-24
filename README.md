@@ -10,22 +10,9 @@ Once the card is succesfully generated, the user can export it by saving it as P
 ## How it works
 
 1. Insert your GitHub username in the search box and click the search icon.
-
-<!-- ![Search Profile](https://user-images.githubusercontent.com/93556620/180647072-1e64eb93-1aa6-4fe3-9c26-47a9cfc681f4.mov) -->
-
 2. If a username is not provided or if the username doesn't exist, there will be an error alert
-
-<!-- ![Username not informed](https://user-images.githubusercontent.com/93556620/180647086-a31b8f02-bf4b-4d09-a39e-ee92e2c63712.mov) -->
-
-<!-- ![User not found](https://user-images.githubusercontent.com/93556620/180647105-a2ce7626-ea81-494d-98aa-1bdab09c741d.mov) -->
-
 3. Generate a random background
-
-<!-- ![Generate Background](https://user-images.githubusercontent.com/93556620/180647121-0df84794-8877-44bc-bed5-6117c8656607.mov) -->
-
 4. Export the card
-
-<!-- ![Export](https://user-images.githubusercontent.com/93556620/180647129-c158313a-2837-428a-8ea1-5aa0ec530824.mov) -->
 
 ![How it works](https://user-images.githubusercontent.com/93556620/180647769-e4d5e3d9-dab9-4872-b912-0066a6354dc5.mov)
 
@@ -38,3 +25,9 @@ In order to run this application:
 3. install the dependencies using ```npm i``` or ```npm install```;
 4. execute ```npm run dev``` in the command line;
 5. open <http://localhost:3000> on your browser;
+
+## Techs
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
