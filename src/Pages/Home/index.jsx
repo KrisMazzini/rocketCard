@@ -6,7 +6,7 @@ import './styles.css'
 
 import {Card }from '../../components/Card'
 import { Button } from '../../components/Button'
-import { SearchProfile } from '../../components/SearchProflie'
+import { SearchProfile } from '../../components/SearchProfile'
 import { users } from '../../constants/githubApi'
 
 export function Home() {
@@ -28,9 +28,11 @@ export function Home() {
         
         const rbgIndexes = [0,0,0].map(getRandomNumber)
         const backgroundColor = getRBGColor(...rbgIndexes)
+        const textColor = getTextColor(...rbgIndexes)
 
         elements.forEach(element => {
             element.style.backgroundColor = backgroundColor
+            element.style.color = textColor
         })
     }
 
@@ -44,7 +46,17 @@ export function Home() {
         return randomNumber
     }
 
-    async function fetchData() {
+    function getTextColor(red = 0, green = 0, blue = 0) {
+        const black = '#000000'
+        const white = '#ffffff'
+
+        const backgroundInstensity = red * 0.299 + green * 0.587 + blue * 0.114
+        const textColor = backgroundInstensity > 150 ? black : white
+
+        return textColor
+    }
+
+    async function fetchGithubData() {
         try {
             const githubAPI = `${users}${username}`
             const response = await axios.get(githubAPI)
@@ -64,7 +76,7 @@ export function Home() {
             </main>
             <aside>
                 <p>Search GitHub profile</p>
-                <SearchProfile onchange={e => setUsername(e.target.value)} onclick={fetchData}/>
+                <SearchProfile onchange={e => setUsername(e.target.value)} onclick={fetchGithubData}/>
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
                 <p>Export Rocketcard</p>

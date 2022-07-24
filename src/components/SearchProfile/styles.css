@@ -9,6 +9,7 @@
     border-radius: 15px;
     
     background-color: #000000;
+    color: #FFFFFF;
 }
 
 .search-profile input {
@@ -26,7 +27,12 @@
     line-height: 23px;
         
     background-color: inherit;
-    color: #FFFFFF;
+    color: inherit;
+}
+
+.search-profile input::placeholder {
+    color: inherit;
+    filter: brightness(0.8);
 }
 
 .search-profile button {
