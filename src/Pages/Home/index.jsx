@@ -95,7 +95,7 @@ export function Home() {
     return (
         <div className="container">
             {
-                errorMessage ? <Alert errorMessage={errorMessage}/> : <></>
+                errorMessage ? <Alert errorMessage={errorMessage} onclick={() => setErrorMessage(null)} /> : <></>
             }
             <main>
                 <p>Share your #rocketcard</p>
