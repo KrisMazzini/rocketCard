@@ -61,7 +61,7 @@ export function Home() {
 
     function addError(message) {
         setErrorMessage(message)
-        setTimeout(setErrorMessage, 3000, null)
+        setTimeout(setErrorMessage, 5000, null)
     }
 
     function handleFetchGithubData() {
