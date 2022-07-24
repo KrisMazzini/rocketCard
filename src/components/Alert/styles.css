@@ -1,0 +1,32 @@
+.alert {
+    min-width: 150px;
+    max-width: 450px;
+    height: 70px;
+
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+}
+
+.alert img {
+    width: 40px;
+    height: 40px;
+}
+
+.alert p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 23px;
+
+    color: #000000;
+}

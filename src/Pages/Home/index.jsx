@@ -7,12 +7,15 @@ import './styles.css'
 import {Card }from '../../components/Card'
 import { Button } from '../../components/Button'
 import { SearchProfile } from '../../components/SearchProfile'
+import { Alert } from '../../components/Alert'
+
 import { users } from '../../constants/githubApi'
 
 export function Home() {
 
     const [username, setUsername] = useState(null)
     const [profile, setProfile] = useState({})
+    const [errorMessage, setErrorMessage] = useState(null)
     
     const cardRef = useRef()
 
@@ -56,6 +59,20 @@ export function Home() {
         return textColor
     }
 
+    function addError(message) {
+        setErrorMessage(message)
+        setTimeout(setErrorMessage, 3000, null)
+    }
+
+    function handleFetchGithubData() {
+        if (!username) {
+            addError("Insert an username!")
+            return
+        }
+
+        fetchGithubData()
+    }
+
     async function fetchGithubData() {
         try {
             const githubAPI = `${users}${username}`
@@ -64,19 +81,29 @@ export function Home() {
             setProfile(response.data)
         } catch (err) {
             setProfile({})
-            console.err(err)
+            console.error(err)
+
+            if (err.response.status === 404) {
+                addError("User not found!")
+                return
+            }
+
+            addError("It was not possible to process this request. Try again later.")
         }
     }
 
     return (
         <div className="container">
+            {
+                errorMessage ? <Alert errorMessage={errorMessage}/> : <></>
+            }
             <main>
                 <p>Share your #rocketcard</p>
                 <Card profile={profile} ref={cardRef} />
             </main>
             <aside>
                 <p>Search GitHub profile</p>
-                <SearchProfile onchange={e => setUsername(e.target.value)} onclick={fetchGithubData}/>
+                <SearchProfile onchange={e => setUsername(e.target.value)} onclick={handleFetchGithubData}/>
                 <p>Customize Rocketcard</p>
                 <Button key="generateBackgroundColor" text="Generate Background" onclick={generateBackgroundColor}/>
                 <p>Export Rocketcard</p>
